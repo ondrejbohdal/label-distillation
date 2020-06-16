@@ -2,7 +2,8 @@
 
 <p align="center"><img src='resources/LabelDistillationPipeline.jpg' width=600></p>
 
-Abstract:
+[[Paper]](https://arxiv.org/abs/2006.08572)
+
  We study the problem of dataset distillation – creating a small set of synthetic
  examples capable of training a good model. In particular, we study the problem of
  label distillation – creating synthetic labels for a small set of real images, and show
@@ -40,7 +41,7 @@ After downloading the datasets, place them into ``data`` directory so that CUB i
 ## Experiments
 
 ### How to run experiments?
-The easiest way to run experiments is by using one of the configuration ``json`` files (modifying parts as needed). Example is shown here, but you can easily use another configuration file (see ``experiment_configs`` directory). Description of what the individual parts of the configuration file name mean are in ``NameDescription.md`` file located in ``experiment_configs`` directory. File ``configs.txt`` located in the same directory lists all attached configuration files.
+The easiest way to run experiments is by using one of the configuration ``json`` files (modifying parts as needed). Example is shown here, but you can easily use another configuration file (see ``experiment_configs`` directory). Description of what the individual parts of the configuration file name mean are in ``NameDescription.md`` file located in ``experiment_configs`` directory. File ``configs.txt`` located in the same directory lists all attached configuration files. We provide configuration files for all main experiments as well as most analysis experiments.
 
 Label distillation experiment with second-order approach:
 ``python label_distillation_or2.py --filepath_to_arguments_json_file experiment_configs/ld_100be_50ib_mn_to_mn_bl_cnn_400e_or2_1234s_v0.json``
@@ -48,7 +49,7 @@ Label distillation experiment with second-order approach:
 Label distillation experiment with first-order ridge regression approach:
 ``python label_distillation_rr.py --filepath_to_arguments_json_file experiment_configs/ld_100be_50ib_mn_to_mn_bl_cnn_400e_rr_1234s_v0.json``
 
-If you want to quickly try an experiment without creating a new configuration file (or using one of the provided files), you can use ``short_experiment.sh``.
+These scripts do both training and evaluation. If you want to quickly try an experiment without creating a new configuration file (or using one of the provided files), you can use ``short_experiment.sh``.
 
 To make creating configuration files easier, we have created a Jupyter notebook that allows creating many of them efficiently (``GenerateExperiments.ipynb`` in ``notebooks`` directory).
 
@@ -56,7 +57,7 @@ You can also specify the arguments directly (for a list of arguments look at ``a
 
 In addition, we provide code for distilling images (``data_distillation_or2.py`` and ``data_distillation_rr.py``). We have not obtained strong results with these, but they can be useful nevertheless.
 
-### How to analyse the results?
+### How to analyse results?
 
 The results of experiments as well as statistics about the training are saved as ``json`` files in ``results`` directory, using the name of the experiment. The information stored typically includes information about training and validation error rates across different epochs, test errors across 20 repetitions, total training time (in seconds), best synthetic labels for a set of base examples (original base example labels are stored too) as well as the number of steps used for training validation and test models. Our experiments report error rates rather than accuracies, so to obtain accuracies it is needed to calculate them from the error rates.
 
@@ -67,7 +68,7 @@ If you find this useful for your research, please consider citing:
  @article{bohdal2020flexible,
    title={Flexible Dataset Distillation: Learn Labels Instead of Images},
    author={Bohdal, Ondrej and Yang, Yongxin and Hospedales, Timothy},
-   journal={arXiv preprint arXiv:2006.TBD},
+   journal={arXiv preprint arXiv:2006.08572},
    year={2020}
 }
  ```
