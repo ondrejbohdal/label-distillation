@@ -44,9 +44,11 @@ After downloading the datasets, place them into ``data`` directory so that CUB i
 The easiest way to run experiments is by using one of the configuration ``json`` files (modifying parts as needed). Example is shown here, but you can easily use another configuration file (see ``experiment_configs`` directory). Description of what the individual parts of the configuration file name mean are in ``NameDescription.md`` file located in ``experiment_configs`` directory. File ``configs.txt`` located in the same directory lists all attached configuration files. We provide configuration files for all main experiments as well as most analysis experiments.
 
 Label distillation experiment with second-order approach:
+
 ``python label_distillation_or2.py --filepath_to_arguments_json_file experiment_configs/ld_100be_50ib_mn_to_mn_bl_cnn_400e_or2_1234s_v0.json``
 
 Label distillation experiment with first-order ridge regression approach:
+
 ``python label_distillation_rr.py --filepath_to_arguments_json_file experiment_configs/ld_100be_50ib_mn_to_mn_bl_cnn_400e_rr_1234s_v0.json``
 
 These scripts do both training and evaluation. If you want to quickly try an experiment without creating a new configuration file (or using one of the provided files), you can use ``short_experiment.sh``.
