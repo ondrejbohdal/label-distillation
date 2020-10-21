@@ -1,20 +1,10 @@
 # Flexible Dataset Distillation: Learn Labels Instead of Images
 
-<p align="center"><img src='resources/LabelDistillationPipeline.jpg' width=600></p>
+<p align="center"><img src='resources/LabelDistillationPipeline.png' width=600></p>
 
 [[Paper]](https://arxiv.org/abs/2006.08572)
 
- We study the problem of dataset distillation – creating a small set of synthetic
- examples capable of training a good model. In particular, we study the problem of
- label distillation – creating synthetic labels for a small set of real images, and show
- it to be more effective than the prior image-based approach to dataset distillation.
- Interestingly, label distillation can be applied across datasets, for example enabling
- learning Japanese character recognition by training only on synthetically labeled
- English letters. Methodologically, we introduce a more robust and flexible meta-learning algorithm for distillation, as well as an effective first-order strategy based
- on convex optimization layers. Distilling labels with our new algorithm leads to
- improved results over prior image-based distillation. More importantly, it leads to
- clear improvements in flexibility of the distilled dataset in terms of compatibility
- with off-the-shelf optimizers and diverse neural architectures.
+We study the problem of dataset distillation – creating a small set of synthetic examples capable of training a good model. In particular, we study the problem of label distillation – creating synthetic labels for a small set of real images, and show it to be more effective than the prior image-based approach to dataset distillation. Methodologically, we introduce a more robust and flexible meta-learning algorithm for distillation, as well as an effective first-order strategy based on convex optimization layers. Distilling labels with our new algorithm leads to improved results over prior image-based distillation. More importantly, it leads to clear improvements in flexibility of the distilled dataset in terms of compatibility with offthe-shelf optimizers and diverse neural architectures. Interestingly, label distillation can also be applied across datasets, for example enabling learning Japanese character recognition by training only on synthetically labeled English letters.
 
 ## Prerequisites
 
